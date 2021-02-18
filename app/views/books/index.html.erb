@@ -1,0 +1,19 @@
+
+<% @books.each do |book| %>
+  <%= book.title %>
+  <%= book.body %>
+<% end %>
+
+<%= form_with model:@book, local:true do |f| %>
+
+  <h2>new book</h2>
+  <%= f.text_field :title %>
+  
+  <h4>title</h4>
+  <%= f.text_field :category %>
+  
+  <h4>body</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'createbook' %>
+
+<% end %>
